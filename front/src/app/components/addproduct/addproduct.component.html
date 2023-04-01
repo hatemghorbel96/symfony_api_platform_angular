@@ -1,0 +1,39 @@
+<div class="container">
+    <form #taskForm="ngForm" (ngSubmit)="addEmp()">
+        <div class="col-sm-2 col-md-2 col-lg-12">
+            <label hidden>id</label>
+            <input hidden type="text" [(ngModel)]="newProduct.id" name="id" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-12">
+            <label>name</label>
+            <input type="text" [(ngModel)]="newProduct.name" name="name" class="form-control">
+        </div>
+        <div class="col-sm-2 col-md-2 col-lg-12">
+            <label>price</label>
+            <input type="number" [(ngModel)]="newProduct.price" name="price" class="form-control">
+        </div>
+        
+        <div class="col-sm-4 col-md-4 col-lg-12">
+            <label>Categorie</label>
+            <select class="form-control form-control" id="id" name="id" [(ngModel)]="newIdCat">
+            <option *ngFor="let cat of categories" [value]="cat.id" >
+            {{cat.name}}
+            </option>
+            </select>
+            </div> 
+    
+        <div class="mt-2">
+            <button type="submit"  class="btn btn-success" [disabled]="!taskForm.form.valid">add</button>
+    
+            <div>
+    
+           
+    
+            </div>
+    
+        </div>
+    </form>
+    <div class="alert alert-warning" *ngIf="taskForm.submitted && addFailed && errorMessage">
+        failed!<br />{{ errorMessage }}
+    </div>
+    </div>

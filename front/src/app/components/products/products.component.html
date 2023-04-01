@@ -1,0 +1,21 @@
+<div class="container">
+
+    <table class="table table-light">
+        <tbody>
+            <th>id</th>
+            <th>nom</th>
+            <th>price</th>
+            <th>cat</th>
+            <tr *ngFor="let e of products ">
+                <td> {{e.id}} </td>
+                <td> {{e.name}} </td>
+                <td> {{e.price}} DT </td>
+                <!--  <td>{{categories[e.category]?.name}}</td> -->
+                <td>{{e.category}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>add</h2>
+   
+</div>
